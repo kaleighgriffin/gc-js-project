@@ -54,14 +54,26 @@
         <h1>CHECKOUT</h1>
         <h3>Payment Type</h3>
             <div id="choosePaymentOption">
-                <input type="radio" id="card-payment" name="payment-method" value="card-payment">
-                <label for="card-payment">Credit Card</label>
-                <input type="radio" id="cash-payment" name="payment-method" value="cash-payment">
-                <label for="cash-payment">Cash</label>
+                <button type="button" id="creditCardButton">Pay With Credit Card</button>
+                <button type="button" id="cashButton">Pay With Cash</button>
             </div>
-            <form id="paymentForm">
-                <button id="makePurchaseButton" type="submit">MAKE PURCHASE</button>
-            </form>
+            <div id="paymentForms">
+                <form id="creditCardForm">
+                    <label for="ccNumber">Credit Card Number</label>
+                    <input id="ccNumber" type="number" placeholder="####-####-####-####">
+                    <label for="exp">Expiration Date</label>
+                    <input id="exp" type="number" placeholder="01/23">
+                    <label for="cvv">CVV</label>
+                    <input id="cvv" type="number" placeholder="####">
+                        
+                    <button id="creditPurchaseSubmit" type="submit">MAKE PURCHASE</button>
+                </form>
+                <form id="cashForm">
+                    <label for="amountTendered">Amount Tendered</label>
+                    <input id="amountTendered" type="number" placeholder="$0.00">
+                    <button id="cashPurchaseSubmit" type="submit">MAKE PURCHASE</button>
+                </form>
+            </div>
     </div>
 
     <div id="receipt">
