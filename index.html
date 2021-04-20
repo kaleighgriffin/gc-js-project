@@ -33,8 +33,43 @@
         </ul>
     </div>
 
+    <div id="cart">
+        <h1>Your Cart</h1>
+        <section>
+            <ul id="items-in-cart">
+                <!-- cart items will go here as li-->
+    
+            </ul>
+            <p>subtotal:<span id="subtotal"></span></p>
+            <p>tax:</p><span id="tax"></span>
+            <p>total:</p><span id="total"></span>
+        </section>
+        <section>
+            <p><a href ="index.html">continue shopping</a></p>
+            <p><a href ="checkout.html">checkout</a></p>
+        </section>
+    </div>
+
+    <div id="checkout">
+        <h1>CHECKOUT</h1>
+        <h3>Payment Type</h3>
+            <div id="choosePaymentOption">
+                <input type="radio" id="card-payment" name="payment-method" value="card-payment">
+                <label for="card-payment">Credit Card</label>
+                <input type="radio" id="cash-payment" name="payment-method" value="cash-payment">
+                <label for="cash-payment">Cash</label>
+            </div>
+            <form id="paymentForm">
+                <button id="makePurchaseButton" type="submit">MAKE PURCHASE</button>
+            </form>
+    </div>
+
+    <div id="receipt">
+
+    </div>
+
     <footer>
-        <a href="#">View Cart</a>
+        <a href="cart.html">View Cart</a>
     </footer>
 
     <script src="script.js"></script>
