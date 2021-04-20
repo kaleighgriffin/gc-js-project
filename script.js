@@ -1,9 +1,20 @@
 "use strict"
 {
     let listOfItems = document.querySelectorAll("li");
-    console.log(listOfItems[0]);
-
+    let vendingItemsDiv = document.getElementById("vending-items")
     let cartItemsArray = [];
-    cartItemsArray.push(listOfItems[0]);
-    console.log(cartItemsArray);
+    
+    vendingItemsDiv.addEventListener("click", (event) => {
+        if (event.target.classList.contains("item-for-sale")) {
+            cartItemsArray.push(event.target)
+        }
+        console.log(cartItemsArray);
+    });
+    
+
+
+
+ 
+
+
 }
