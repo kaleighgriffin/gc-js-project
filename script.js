@@ -5,13 +5,14 @@
     let cartItemsArray = [];
     let cartItemsContainer = document.getElementById("items-in-cart");
     let cartDiv = document.getElementById("cart");
+    let receiptDiv = document.getElementById("receipt");
     let tax;
     let total;
     let subtotal = 0;
     let amountTendered;
     let change;
     
-    
+    // CART
     vendingItemsDiv.addEventListener("click", (event) => {
         if (event.target.classList.contains("item-for-sale")) {
             
@@ -28,10 +29,10 @@
             //update subtotal, tax and total 
             let displaySubtotal = document.getElementById("subtotal");
             displaySubtotal.innerText = subtotal;
-            tax = subtotal * .06;
+            tax = Number((subtotal * .06).toFixed(2));
             let displayTax = document.getElementById("tax");
             displayTax.innerText = tax;
-            total = subtotal + tax;
+            total = Number(subtotal + tax);
             let displayTotal = document.getElementById("total");
             displayTotal.innerText = total;
 
@@ -40,7 +41,7 @@
 
     });
 
-    // CART
+    
     let viewCartButton = document.getElementById("viewCartButton")
         viewCartButton.addEventListener("click", (event) => {
             document.getElementById("cart").scrollIntoView({behavior: 'smooth'});
@@ -97,15 +98,37 @@
 
     
     //RECEIPT
-
+    let receiptItemsContainer = document.getElementById("receiptItemsContainer");
     let cashSubmit = document.getElementById("cashPurchaseSubmit");
     cashSubmit.addEventListener("click", (event) => {
         event.preventDefault();
         let cashInput = document.getElementById("amountTendered");
         amountTendered = cashInput.value;
         change = amountTendered - total;
+        receiptDiv.removeAttribute("hidden");
+        let displayTotalReceipt = document.getElementById("display-total-receipt");
+        displayTotalReceipt.innerText = total;
+        let displayChangeReceipt = document.getElementById("display-change-receipt");
+        displayChangeReceipt.innerText = `Your change: $${change}`;
+                
+    })
+
+    let creditCardSubmit = document.getElementById("creditPurchaseSubmit");
+    creditCardSubmit.addEventListener("click", (event) => {
+        event.preventDefault();
+        receiptDiv.removeAttribute("hidden");
+
+        for (let purchasedItem of cartItemsArray){
+        let receiptItem = document.createElement("li");
+        let purchasedItemPrice = purchasedItem.getAttribute("data-price")
+        receiptItem.innerText = `Item name . . . ${purchasedItemPrice}`;
+        receiptItemsContainer.append(receiptItem);
         
+        }
+        let displayTotalReceipt = document.getElementById("display-total-receipt");
+        displayTotalReceipt.innerText = total;
         
+                
     })
 
 
