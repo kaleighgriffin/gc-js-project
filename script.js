@@ -37,13 +37,32 @@
 
     });
 
+    // CART
+    let viewCartButton = document.getElementById("viewCartButton")
+        viewCartButton.addEventListener("click", (event) => {
+            document.getElementById("cart").scrollIntoView({behavior: 'smooth'});
+        });
+
+    let continueShoppingButton = document.getElementById("continueShoppingButton")
+    continueShoppingButton.addEventListener("click", (event) => {
+            document.getElementById("vending-items").scrollIntoView({behavior: 'smooth'});
+        });
+        
+
+
     // CHECKOUT
     let creditCardRadio = document.getElementById("creditCardButton");
     let cashRadio = document.getElementById("cashButton");
 
+    let checkoutButton = document.getElementById("checkoutButton");
+    let checkoutSection = document.getElementById("checkout");
+    checkoutButton.addEventListener("click", (event) => {
+        let checkoutSection = document.getElementById("checkout");
+            document.getElementById("checkout").scrollIntoView({behavior: 'smooth'});
+            checkoutSection.removeAttribute("hidden")
+        });
     
-   
-    
+
 
 
 
