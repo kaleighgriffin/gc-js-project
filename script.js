@@ -1,6 +1,6 @@
 "use strict"
 {
-    let listOfItems = document.querySelectorAll("li");
+    // let listOfItems = document.querySelectorAll("li");
     let vendingItemsDiv = document.getElementById("vending-items")
     let cartItemsArray = [];
     let cartItemsContainer = document.getElementById("items-in-cart");
@@ -8,6 +8,8 @@
     let tax;
     let total;
     let subtotal = 0;
+    let amountTendered;
+    let change;
     
     
     vendingItemsDiv.addEventListener("click", (event) => {
@@ -69,15 +71,16 @@
     let creditCardForm = document.getElementById("creditCardForm");
 
     creditCardButton.addEventListener("click", (event) => {
-            document.getElementById("creditPurchaseSubmit").scrollIntoView({behavior: 'smooth'});
+            // document.getElementById("creditPurchaseSubmit").scrollIntoView({behavior: 'smooth'});
             creditCardForm.removeAttribute("hidden");
             cashForm.setAttribute("hidden", true);
         });
     
     cashButton.addEventListener("click", (event) => {
-            document.getElementById("creditPurchaseSubmit").scrollIntoView({behavior: 'smooth'});
+            // document.getElementById("cashPurchaseSubmit").scrollIntoView({behavior: 'smooth'});
             cashForm.removeAttribute("hidden");
             creditCardForm.setAttribute("hidden", true);
+            
         });
 
     let continueShopping2 = document.getElementById("continueShopping2");
@@ -86,8 +89,28 @@
         vendingItemsDiv.removeAttribute("hidden");
         cartDiv.removeAttribute("hidden");
         checkoutSection.setAttribute("hidden", true);
+              
+       
     });
- 
+
+    
+
+    
+    //RECEIPT
+
+    let cashSubmit = document.getElementById("cashPurchaseSubmit");
+    cashSubmit.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cashInput = document.getElementById("amountTendered");
+        amountTendered = cashInput.value;
+        change = amountTendered - total;
+        
+        
+    })
+
+
+
+    
 
 
 }
