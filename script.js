@@ -106,6 +106,13 @@
         amountTendered = cashInput.value;
         change = amountTendered - total;
         receiptDiv.removeAttribute("hidden");
+
+        for (let purchasedItem of cartItemsArray){
+            let receiptItem = document.createElement("li");
+            let purchasedItemPrice = purchasedItem.getAttribute("data-price")
+            receiptItem.innerText = `Item name . . . ${purchasedItemPrice}`;
+            receiptItemsContainer.append(receiptItem);
+          }
         let displayTotalReceipt = document.getElementById("display-total-receipt");
         displayTotalReceipt.innerText = total;
         let displayChangeReceipt = document.getElementById("display-change-receipt");
@@ -122,8 +129,7 @@
         let receiptItem = document.createElement("li");
         let purchasedItemPrice = purchasedItem.getAttribute("data-price")
         receiptItem.innerText = `Item name . . . ${purchasedItemPrice}`;
-        receiptItemsContainer.append(receiptItem);
-        
+        receiptItemsContainer.append(receiptItem); 
         }
         let displayTotalReceipt = document.getElementById("display-total-receipt");
         displayTotalReceipt.innerText = total;
