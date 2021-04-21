@@ -4,6 +4,7 @@
     let vendingItemsDiv = document.getElementById("vending-items")
     let cartItemsArray = [];
     let cartItemsContainer = document.getElementById("items-in-cart");
+    let cartDiv = document.getElementById("cart");
     let tax;
     let total;
     let subtotal = 0;
@@ -51,21 +52,41 @@
 
 
     // CHECKOUT
-    let creditCardRadio = document.getElementById("creditCardButton");
-    let cashRadio = document.getElementById("cashButton");
+    let creditCardButton = document.getElementById("creditCardButton");
+    let cashButton = document.getElementById("cashButton");
 
     let checkoutButton = document.getElementById("checkoutButton");
     let checkoutSection = document.getElementById("checkout");
     checkoutButton.addEventListener("click", (event) => {
         let checkoutSection = document.getElementById("checkout");
             document.getElementById("checkout").scrollIntoView({behavior: 'smooth'});
-            checkoutSection.removeAttribute("hidden")
+            checkoutSection.removeAttribute("hidden");
+            vendingItemsDiv.setAttribute("hidden", true);
+            cartDiv.setAttribute("hidden", true);
         });
     
+    let cashForm = document.getElementById("cashForm");
+    let creditCardForm = document.getElementById("creditCardForm");
 
+    creditCardButton.addEventListener("click", (event) => {
+            document.getElementById("creditPurchaseSubmit").scrollIntoView({behavior: 'smooth'});
+            creditCardForm.removeAttribute("hidden");
+            cashForm.setAttribute("hidden", true);
+        });
+    
+    cashButton.addEventListener("click", (event) => {
+            document.getElementById("creditPurchaseSubmit").scrollIntoView({behavior: 'smooth'});
+            cashForm.removeAttribute("hidden");
+            creditCardForm.setAttribute("hidden", true);
+        });
 
+    let continueShopping2 = document.getElementById("continueShopping2");
 
-
+    continueShopping2.addEventListener("click", (event) => {
+        vendingItemsDiv.removeAttribute("hidden");
+        cartDiv.removeAttribute("hidden");
+        checkoutSection.setAttribute("hidden", true);
+    });
  
 
 

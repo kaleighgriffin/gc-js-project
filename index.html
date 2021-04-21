@@ -12,9 +12,10 @@
     <header>
         <h1>Our Vending Machine</h1>
     </header>
-    <button id="viewCartButton" type="button">View Cart</button>
-    <p id="instructions">Click on the item you wish to learn more about for more details.</p>
+    
     <div id="vending-items">
+        <button id="viewCartButton" type="button">View Cart</button>
+        <p id="instructions">Click on the item you wish to learn more about for more details.</p>
         <ul>
             <li id="a1" class="item-for-sale" data-price="1">A1</li>
             <li id="a2" class="item-for-sale" data-price="2">A2</li>
@@ -59,7 +60,7 @@
                 <button type="button" id="cashButton">Pay With Cash</button>
             </div>
             <div id="paymentForms">
-                <form id="creditCardForm">
+                <form id="creditCardForm" hidden>
                     <label for="ccNumber">Credit Card Number</label>
                     <input id="ccNumber" type="number" placeholder="####-####-####-####">
                     <label for="exp">Expiration Date</label>
@@ -69,11 +70,12 @@
                         
                     <button id="creditPurchaseSubmit" type="submit">MAKE PURCHASE</button>
                 </form>
-                <form id="cashForm">
+                <form id="cashForm" hidden>
                     <label for="amountTendered">Amount Tendered</label>
                     <input id="amountTendered" type="number" placeholder="$0.00">
                     <button id="cashPurchaseSubmit" type="submit">MAKE PURCHASE</button>
                 </form>
+                <button id="continueShopping2" type="button">Continue Shopping</button>
             </div>
     </div>
 
