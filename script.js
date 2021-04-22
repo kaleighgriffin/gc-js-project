@@ -2,6 +2,7 @@
 {
     // let listOfItems = document.querySelectorAll("li");
     let vendingItemsDiv = document.getElementById("vending-items")
+    let instructions = document.getElementById("instructions");
     let cartItemsArray = [];
     let cartItemsContainer = document.getElementById("items-in-cart");
     let cartPricesContainer = document.getElementById("prices-in-cart");
@@ -87,7 +88,11 @@
             document.getElementById("checkout").scrollIntoView({behavior: 'smooth'});
             checkoutSection.removeAttribute("hidden");
             vendingItemsDiv.setAttribute("hidden", true);
-            cartDiv.setAttribute("hidden", true);
+            // cartDiv.setAttribute("hidden", true);
+            continueShoppingButton.setAttribute("hidden", true);
+            checkoutButton.setAttribute("hidden", true);
+            instructions.setAttribute("hidden", true);
+            viewCartButton.setAttribute("hidden", true);
         });
     
     let cashForm = document.getElementById("cashForm");

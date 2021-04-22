@@ -103,6 +103,10 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
 #cart {
     margin-top: 30px;
 }
@@ -171,6 +175,31 @@ h2 {
 }
 
 .cart-button {
+    width: 150px;
+    height: 50px;
+}
+
+#choosePaymentOption {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    margin: 10px auto;
+}
+
+#creditCardButton, #cashButton {
+    width: 150px;
+    height: 50px;
+}
+
+/* .creditCardFormStyle, .cashFormStyle {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+} */
+
+
+#continueShopping2 {
     width: 150px;
     height: 50px;
 }
