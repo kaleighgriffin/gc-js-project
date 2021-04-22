@@ -19,7 +19,11 @@ button {
 }
 
 #vending-items {
-    padding: 0 10px;
+    padding: 5px 10px;
+    border: 5px solid white;
+    border-radius: 5px;
+    width: 70vw;
+    margin: 20px auto;
 }
 
 #viewCartButton {
@@ -34,13 +38,27 @@ button {
     text-align: center;
 }
 
+#categories {
+    display: flex;
+    justify-content: space-around;
+    width: 70vw;
+    margin: 0px auto;
+    align-items: flex-end;
+}
+
+.categoryP {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 0;
+    font-size: .8em;
+}
+
 #items-list {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding-left: 0;
-    width: 70vw;
     margin: 10px auto;
 }
 
@@ -86,7 +104,6 @@ h2 {
 }
 
 #cart {
-    border-top: 4px solid white;
     margin-top: 30px;
 }
 
@@ -174,4 +191,7 @@ h2 {
         color: gray;
     }
     
+    .categoryP, .item-for-sale {
+        font-size: 1em;
+    }
   }
