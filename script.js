@@ -26,6 +26,7 @@
             // add items to list
             cartItemsArray.push(eventTargetClosest)
             const product = document.createElement("li");
+            product.classList.add("product")
             product.innerText = `Item: ${eventTargetClosest.getAttribute("data-description")} Price: $${eventTargetClosest.getAttribute("data-price")}`;
             cartItemsContainer.append(product);
 
