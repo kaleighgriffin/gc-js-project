@@ -14,7 +14,6 @@
     let change;
     
     // CART   
-    //LL: since adding images, the click event is only working right now on the edges of the <li>, not the nested items...???
     vendingItemsDiv.addEventListener("click", (event) => {
         
         let eventTargetClosest = event.target.closest(".item-for-sale");
@@ -22,7 +21,12 @@
             
             //update cart total
             subtotal += Number(eventTargetClosest.getAttribute("data-price"));
-            //console.log(subtotal);
+            
+            // remove cart empty message
+            let cartEmptyMessage = document.getElementById("cartEmpty");
+            if (cartEmptyMessage) {
+               cartEmptyMessage.remove(); 
+            }
 
             // add items to list
             cartItemsArray.push(eventTargetClosest)
@@ -32,7 +36,8 @@
             cartItemsContainer.append(product);
             const productPrice = document.createElement("li");
             productPrice.classList.add("product-price")
-            productPrice.innerText = `Price: $${eventTargetClosest.getAttribute("data-price")}`;
+            //let purchasedItemPrice = purchasedItem.getAttribute("data-price");
+            productPrice.innerText = `$${eventTargetClosest.getAttribute("data-price")}.00`;
             cartPricesContainer.append(productPrice);
 
             

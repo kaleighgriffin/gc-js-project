@@ -100,6 +100,7 @@
 
     <div id="cart">
         <h2>Your Cart</h2>
+        <p id="cartEmpty">Your cart is empty!  Buy stuff!</p>
         <section>
             <div id="cart-lists">
                 <ul id="items-in-cart">
@@ -112,14 +113,14 @@
                 </ul>
             </div>
             <div id="cartCalculator">
-                <p>subtotal: $<span id="subtotal"></span></p>
-                <p>tax: $<span id="tax"></span></p>
-                <p>total: $<span id="total"></span></p>
+                <p>subtotal: $<span id="subtotal">0.00</span></p>
+                <p>tax: $<span id="tax">0.00</span></p>
+                <p>total: $<span id="total">0.00</span></p>
             </div>
         </section>
-        <section>
-            <button id="continueShoppingButton" type="button">Continue Shopping</button>
-            <button id="checkoutButton" type="button">Checkout</button>
+        <section id="cart-buttons">
+            <button class="cart-button" id="continueShoppingButton" type="button">Continue Shopping</button>
+            <button class="cart-button" id="checkoutButton" type="button">Checkout</button>
         </section>
     </div>
 
