@@ -24,7 +24,7 @@
             // add items to list
             cartItemsArray.push(event.target)
             const product = document.createElement("li");
-            product.innerText = `Price: $${event.target.getAttribute("data-price")}`;
+            product.innerText = `Item: ${event.target.getAttribute("data-description")} Price: $${event.target.getAttribute("data-price")}`;
             cartItemsContainer.append(product);
 
             //update subtotal, tax and total 
