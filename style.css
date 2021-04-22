@@ -1,6 +1,38 @@
 body {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 18px;
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+button {
+    background-color: grey;
+    color: white;
+    border-radius: 4px;
+    
+}
+
+button:hover {
+    background-color: white;
+    color: gray;
+}
+
+#viewCartButton {
+    font-size: 1em;
+    padding: .5em 3em;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#instructions {
+    text-align: center;
+    
 }
 
 #items-list {
@@ -9,11 +41,27 @@ body {
     flex-wrap: wrap;
 }
 
+
 .item-for-sale {
     width: 30%;
     background-color: gray;
     padding-bottom: .5em;
     margin: 4px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.item-for-sale:hover {
+    background-color: white;
+    color: grey;
+}
+
+.item-for-sale:hover p {
+    color: gray;
+}
+
+.clicked {
+    border: 6px solid yellowgreen;
 }
 
 .item-image {

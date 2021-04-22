@@ -41,8 +41,15 @@
 
             }
         
+        eventTargetClosest.classList.add("clicked");
+        setTimeout(() => {
+            eventTargetClosest.classList.remove("clicked");
+        }, 200);
+        
 
     });
+
+
 
     
     let viewCartButton = document.getElementById("viewCartButton")
