@@ -32,7 +32,7 @@
             cartItemsArray.push(eventTargetClosest)
             const product = document.createElement("li");
             product.classList.add("product")
-            product.innerText = `Item: ${eventTargetClosest.getAttribute("data-description")}`;
+            product.innerText = `${eventTargetClosest.getAttribute("data-description")}`;
             cartItemsContainer.append(product);
             const productPrice = document.createElement("li");
             productPrice.classList.add("product-price")
