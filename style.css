@@ -89,14 +89,26 @@ h2 {
     margin-top: 30px;
 }
 
+#cart-lists {
+    display: flex;
+    width: 70vw;
+    margin: 0 auto;
+}
+
 #items-in-cart {
     list-style: none;
     padding-left: 0;
-    width: 70vw;
-    margin: auto;
+    flex: 2;
+}
+
+#prices-in-cart {
+    list-style: none;
+    padding-left: 0;
+    flex: 1;
 }
 
 #cartCalculator {
+    text-align: right;
     padding-left: 0;
     width: 70vw;
     margin: auto;
@@ -115,9 +127,16 @@ h2 {
 .product {
     border-bottom: 1px dotted white;
     color: lightgrey;
-    font-size: 14px;
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+.product-price {
+    border-bottom: 1px dotted white;
+    color: lightgrey;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-align: right;
 }
 
 @media only screen and (min-width: 768px) {

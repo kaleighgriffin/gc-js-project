@@ -4,6 +4,7 @@
     let vendingItemsDiv = document.getElementById("vending-items")
     let cartItemsArray = [];
     let cartItemsContainer = document.getElementById("items-in-cart");
+    let cartPricesContainer = document.getElementById("prices-in-cart");
     let cartDiv = document.getElementById("cart");
     let receiptDiv = document.getElementById("receipt");
     let tax;
@@ -27,9 +28,14 @@
             cartItemsArray.push(eventTargetClosest)
             const product = document.createElement("li");
             product.classList.add("product")
-            product.innerText = `Item: ${eventTargetClosest.getAttribute("data-description")} Price: $${eventTargetClosest.getAttribute("data-price")}`;
+            product.innerText = `Item: ${eventTargetClosest.getAttribute("data-description")}`;
             cartItemsContainer.append(product);
+            const productPrice = document.createElement("li");
+            productPrice.classList.add("product-price")
+            productPrice.innerText = `Price: $${eventTargetClosest.getAttribute("data-price")}`;
+            cartPricesContainer.append(productPrice);
 
+            
             //update subtotal, tax and total 
             let displaySubtotal = document.getElementById("subtotal");
             displaySubtotal.innerText = subtotal.toFixed(2);
