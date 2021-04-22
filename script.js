@@ -112,14 +112,15 @@
 
         for (let purchasedItem of cartItemsArray){
             let receiptItem = document.createElement("li");
-            let purchasedItemPrice = purchasedItem.getAttribute("data-price")
-            receiptItem.innerText = `Item name . . . ${purchasedItemPrice}`;
+            let purchasedItemPrice = purchasedItem.getAttribute("data-price");
+            let purchaseItemDescription = purchasedItem.getAttribute("data-description");
+            receiptItem.innerText = purchaseItemDescription + `. . .  $` + Number(purchasedItemPrice).toFixed(2);
             receiptItemsContainer.append(receiptItem);
           }
         let displayTotalReceipt = document.getElementById("display-total-receipt");
-        displayTotalReceipt.innerText = total;
+        displayTotalReceipt.innerText = total.toFixed(2);
         let displayChangeReceipt = document.getElementById("display-change-receipt");
-        displayChangeReceipt.innerText = `Your change: $${change}`;
+        displayChangeReceipt.innerText = `Your change: $` + Number(change).toFixed(2);
                 
     })
 
@@ -130,17 +131,22 @@
 
         for (let purchasedItem of cartItemsArray){
         let receiptItem = document.createElement("li");
-        let purchasedItemPrice = purchasedItem.getAttribute("data-price")
-        receiptItem.innerText = `Item name . . . ${purchasedItemPrice}`;
+        let purchasedItemPrice = purchasedItem.getAttribute("data-price");
+        let purchaseItemDescription = purchasedItem.getAttribute("data-description");
+        receiptItem.innerText = purchaseItemDescription + `. . .  $` + Number(purchasedItemPrice).toFixed(2);
         receiptItemsContainer.append(receiptItem); 
         }
         let displayTotalReceipt = document.getElementById("display-total-receipt");
-        displayTotalReceipt.innerText = total;
+        displayTotalReceipt.innerText = total.toFixed(2);
         
                 
     })
 
-
+    let receiptButton = document.getElementById("closeReceipt");
+    receiptButton.addEventListener("click", (event) => {
+        location.reload();
+        alert("Thank you for your purchase!");
+    })
 
     
 
