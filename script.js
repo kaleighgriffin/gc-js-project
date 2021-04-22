@@ -15,27 +15,29 @@
     // CART   
     //LL: since adding images, the click event is only working right now on the edges of the <li>, not the nested items...???
     vendingItemsDiv.addEventListener("click", (event) => {
-        if (event.target.classList.contains("item-for-sale")) {
+        
+        let eventTargetClosest = event.target.closest(".item-for-sale");
+        if (event.target.closest(".item-for-sale")) {
             
             //update cart total
-            subtotal += Number(event.target.getAttribute("data-price"));
-            console.log(subtotal);
+            subtotal += Number(eventTargetClosest.getAttribute("data-price"));
+            //console.log(subtotal);
 
             // add items to list
-            cartItemsArray.push(event.target)
+            cartItemsArray.push(eventTargetClosest)
             const product = document.createElement("li");
-            product.innerText = `Item: ${event.target.getAttribute("data-description")} Price: $${event.target.getAttribute("data-price")}`;
+            product.innerText = `Item: ${eventTargetClosest.getAttribute("data-description")} Price: $${eventTargetClosest.getAttribute("data-price")}`;
             cartItemsContainer.append(product);
 
             //update subtotal, tax and total 
             let displaySubtotal = document.getElementById("subtotal");
-            displaySubtotal.innerText = subtotal;
+            displaySubtotal.innerText = subtotal.toFixed(2);
             tax = Number((subtotal * .06).toFixed(2));
             let displayTax = document.getElementById("tax");
-            displayTax.innerText = tax;
+            displayTax.innerText = tax.toFixed(2);
             total = Number(subtotal + tax);
             let displayTotal = document.getElementById("total");
-            displayTotal.innerText = total;
+            displayTotal.innerText = total.toFixed(2);
 
             }
         
