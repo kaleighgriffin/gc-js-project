@@ -15,18 +15,19 @@ button {
     background-color: grey;
     color: white;
     border-radius: 4px;
-    
+    border: none;
 }
 
 #vending-items {
     padding: 5px 10px;
-    border: 5px solid white;
+    border: 3px solid grey;
     border-radius: 5px;
     width: 70vw;
     margin: 20px auto;
+    max-width: 1000px;
 }
 
-#viewCartButton {
+#viewCartButton, #closeReceipt {
     font-size: 1em;
     padding: .5em 3em;
     position: relative;
@@ -43,14 +44,30 @@ button {
     justify-content: space-around;
     width: 70vw;
     margin: 0px auto;
-    align-items: flex-end;
+    align-items: center;
+    border-bottom: 2px solid gray;
 }
 
 .categoryP {
     text-align: center;
     width: 30%;
     margin-bottom: 0;
-    font-size: .8em;
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+#superPowers {
+    font-family: 'Bangers', cursive;
+    letter-spacing: .1em;
+}
+
+#magicItems {
+    font-family: 'Bad Script', cursive;
+}
+
+#wishfulThinking {
+    font-family: 'Tangerine', cursive;
+    font-size: 1.5em;
 }
 
 #items-list {
@@ -73,7 +90,7 @@ button {
 }
 
 .clicked {
-    border: 6px solid yellowgreen;
+    border: 6px solid lightseagreen;;
     background-color: lightgray;
     color: gray;
 }
@@ -137,13 +154,28 @@ h3 {
 }
 
 #receipt {
-    height: 800px;
-    width: 100px;
-    background-color: blueviolet;
+    border: 5px solid lightseagreen;
+    color: black;
+    min-height: 60%;
+    width: 85%;
+    background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding-bottom: 20px;
+}
+
+#receiptItemsContainer {
+    list-style: none;
+}
+
+.receiptText {
+    text-align: center;
+}
+
+h4 {
+    font-size: 30px;
 }
 
 .product {
@@ -152,6 +184,7 @@ h3 {
     margin-top: 4px;
     margin-bottom: 4px;
     padding-bottom: 3px;
+    white-space: nowrap;
 }
 
 .product-price {
@@ -191,17 +224,33 @@ h3 {
     height: 50px;
 }
 
-/* .creditCardFormStyle, .cashFormStyle {
+#creditCardForm, #cashForm {
     width: 70vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-} */
+}
 
+#creditCardForm[hidden], #cashForm[hidden] {
+    display: none;
+}
+
+input {
+    margin-bottom: 5px;
+}
 
 #continueShopping2 {
-    width: 150px;
-    height: 50px;
+    font-size: 12px;
+    margin-top: 70px;
+    margin-left: 20px;
+    width: 125px;
+    height: 25px;  
+}
+
+#creditPurchaseSubmit, #cashPurchaseSubmit {
+    background-color: lightseagreen;
+    margin-top: 5px;
+    padding: 8px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -223,4 +272,19 @@ h3 {
     .categoryP, .item-for-sale {
         font-size: 1em;
     }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    #bigFlex {
+        display: flex;
+    }
+
+    #vending-items {
+        padding: 20px;
+    }
+
+    #cart {
+        padding: 20px;
+    }
+
   }

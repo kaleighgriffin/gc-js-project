@@ -117,8 +117,10 @@
         vendingItemsDiv.removeAttribute("hidden");
         cartDiv.removeAttribute("hidden");
         checkoutSection.setAttribute("hidden", true);
-              
-       
+        continueShoppingButton.removeAttribute("hidden");
+        checkoutButton.removeAttribute("hidden");
+        instructions.removeAttribute("hidden");
+        viewCartButton.removeAttribute("hidden");
     });
 
     
