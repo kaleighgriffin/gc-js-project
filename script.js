@@ -12,7 +12,8 @@
     let amountTendered;
     let change;
     
-    // CART
+    // CART   
+    //LL: since adding images, the click event is only working right now on the edges of the <li>, not the nested items...???
     vendingItemsDiv.addEventListener("click", (event) => {
         if (event.target.classList.contains("item-for-sale")) {
             

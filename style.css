@@ -1,9 +1,43 @@
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+}
+
+#items-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .item-for-sale {
-    height: 50px;
-    width: 50px;
-    border: 2px solid red;
+    width: 30%;
+    background-color: gray;
+    padding-bottom: .5em;
     margin: 4px;
 }
+
+.item-image {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+.name {
+    color: white;
+    font-weight: 600;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+}
+
+.item-info {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+
 
 #receipt {
     height: 800px;
@@ -14,3 +48,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
