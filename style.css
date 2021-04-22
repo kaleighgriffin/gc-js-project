@@ -1,6 +1,6 @@
 body {
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     background-color: black;
 }
@@ -17,9 +17,8 @@ button {
     
 }
 
-button:hover {
-    background-color: white;
-    color: gray;
+#vending-items {
+    padding: 0 10px;
 }
 
 #viewCartButton {
@@ -32,36 +31,32 @@ button:hover {
 
 #instructions {
     text-align: center;
-    
 }
 
 #items-list {
     list-style: none;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 0;
+    width: 70vw;
+    margin: 10px auto;
 }
 
-
 .item-for-sale {
-    width: 30%;
     background-color: gray;
     padding-bottom: .5em;
     margin: 4px;
     border-radius: 6px;
     box-sizing: border-box;
-}
-
-.item-for-sale:hover {
-    background-color: white;
-    color: grey;
-}
-
-.item-for-sale:hover p {
-    color: gray;
+    width: 30%;
+    font-size: .8em;
 }
 
 .clicked {
     border: 6px solid yellowgreen;
+    background-color: lightgray;
+    color: gray;
 }
 
 .item-image {
@@ -85,6 +80,27 @@ button:hover {
     margin: 0;
 }
 
+h2 {
+    text-align: center;
+}
+
+#cart {
+    border-top: 4px solid white;
+    margin-top: 30px;
+}
+
+#items-in-cart {
+    list-style: none;
+    padding-left: 0;
+    width: 70vw;
+    margin: auto;
+}
+
+#cartCalculator {
+    padding-left: 0;
+    width: 70vw;
+    margin: auto;
+}
 
 
 #receipt {
@@ -97,4 +113,20 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+@media only screen and (min-width: 768px) {
 
+    button:hover {
+        background-color: white;
+        color: gray;
+    }
+
+    .item-for-sale:hover {
+        background-color: white;
+        color: grey;
+    }
+
+    .item-for-sale:hover p {
+        color: gray;
+    }
+    
+  }
