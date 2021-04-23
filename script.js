@@ -25,8 +25,8 @@
             
             // remove cart empty message
             let cartEmptyMessage = document.getElementById("cartEmpty");
-            if (cartEmptyMessage) {
-               cartEmptyMessage.remove(); 
+            if (cartItemsArray !== null) {
+               cartEmptyMessage.innerText = ("Click item to remove from cart."); 
             }
 
             // add items to list
@@ -41,6 +41,23 @@
             productPrice.innerText = `$${eventTargetClosest.getAttribute("data-price")}.00`;
             cartPricesContainer.append(productPrice);
 
+            //remove item from cart
+            product.addEventListener("click", (event) => {
+                product.remove();
+                productPrice.remove();
+                let index = cartItemsArray.indexOf(eventTargetClosest);
+                cartItemsArray.splice(index, 1);
+                subtotal -= Number(eventTargetClosest.getAttribute("data-price"));
+                let displaySubtotal = document.getElementById("subtotal");
+                displaySubtotal.innerText = subtotal.toFixed(2);
+                tax = Number((subtotal * .06).toFixed(2));
+                let displayTax = document.getElementById("tax");
+                displayTax.innerText = tax.toFixed(2);
+                total = Number(subtotal + tax);
+                let displayTotal = document.getElementById("total");
+                displayTotal.innerText = total.toFixed(2);
+                console.log(cartItemsArray);
+            });
             
             //update subtotal, tax and total 
             let displaySubtotal = document.getElementById("subtotal");
