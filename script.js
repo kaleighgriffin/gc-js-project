@@ -153,18 +153,45 @@
     let creditCardSubmit = document.getElementById("creditPurchaseSubmit");
     creditCardSubmit.addEventListener("click", (event) => {
         event.preventDefault();
-        receiptDiv.removeAttribute("hidden");
 
-        for (let purchasedItem of cartItemsArray){
-        let receiptItem = document.createElement("li");
-        let purchasedItemPrice = purchasedItem.getAttribute("data-price");
-        let purchaseItemDescription = purchasedItem.getAttribute("data-description");
-        receiptItem.innerText = purchaseItemDescription + `. . .  $` + Number(purchasedItemPrice).toFixed(2);
-        receiptItemsContainer.append(receiptItem); 
+        function receipt () {
+            receiptDiv.removeAttribute("hidden");
+
+            for (let purchasedItem of cartItemsArray){
+            let receiptItem = document.createElement("li");
+            let purchasedItemPrice = purchasedItem.getAttribute("data-price");
+            let purchaseItemDescription = purchasedItem.getAttribute("data-description");
+            receiptItem.innerText = purchaseItemDescription + `. . .  $` + Number(purchasedItemPrice).toFixed(2);
+            receiptItemsContainer.append(receiptItem); 
+            }
+            let displayTotalReceipt = document.getElementById("display-total-receipt");
+            displayTotalReceipt.innerText = total.toFixed(2);
+            document.getElementById("creditPurchaseSubmit").disabled = true;
         }
-        let displayTotalReceipt = document.getElementById("display-total-receipt");
-        displayTotalReceipt.innerText = total.toFixed(2);
-        document.getElementById("creditPurchaseSubmit").disabled = true;
+
+
+        // CC Validation
+        let ccInputValue = document.getElementById("ccNumber");
+    
+        cardnumber(ccInputValue);
+        function cardnumber(ccInputValue) {
+        
+            let cardVisa = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+            let cardAmex = /^(?:3[47][0-9]{13})$/;
+            let cardMC = /^(?:5[1-5][0-9]{14})$/;
+            if(ccInputValue.value.match(cardVisa)) {
+                receipt();
+            } else if (ccInputValue.value.match(cardAmex)) {
+                receipt();
+            } else if (ccInputValue.value.match(cardMC)) {
+                receipt();
+            } else {
+                alert("Not a valid credit card number!");
+                return false;
+                    }
+                }
+
+
                 
     })
 
