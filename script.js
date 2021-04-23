@@ -147,7 +147,7 @@
         displayTotalReceipt.innerText = total.toFixed(2);
         let displayChangeReceipt = document.getElementById("display-change-receipt");
         displayChangeReceipt.innerText = `Your change: $` + Number(change).toFixed(2);
-                
+        document.getElementById("cashPurchaseSubmit").disabled = true;        
     })
 
     let creditCardSubmit = document.getElementById("creditPurchaseSubmit");
@@ -164,7 +164,7 @@
         }
         let displayTotalReceipt = document.getElementById("display-total-receipt");
         displayTotalReceipt.innerText = total.toFixed(2);
-        
+        document.getElementById("creditPurchaseSubmit").disabled = true;
                 
     })
 
