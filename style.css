@@ -224,6 +224,7 @@ h4 {
 #choosePaymentOption {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 70vw;
     max-width: 600px;
     margin: 10px auto;
@@ -262,6 +263,11 @@ input {
     background-color: lightseagreen;
     margin-top: 5px;
     padding: 8px;
+}
+
+#ccLogo {
+    max-width: 125px;
+    height: auto;
 }
 
 @media only screen and (min-width: 768px) {
