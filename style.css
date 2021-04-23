@@ -128,6 +128,9 @@ h2 {
 
 h3 {
     text-align: center;
+    margin-top: 50px;
+    font-weight: normal;
+    margin-bottom: 25px;
 }
 
 #cart {
@@ -166,6 +169,7 @@ h3 {
     color: black;
     min-height: 60%;
     width: 85%;
+    max-width: 500px;
     background-color: white;
     position: absolute;
     top: 50%;
@@ -176,6 +180,7 @@ h3 {
 
 #receiptItemsContainer {
     list-style: none;
+    margin-bottom: 50px;
 }
 
 .receiptText {
@@ -325,13 +330,16 @@ input {
 
     #cart-buttons {
         width: 100%;
+        justify-content: center;
     }
 
     #viewCartButton {
         display: none;
     }
 
-
+    #continueShoppingButton {
+        display: none;
+    }
 
   }
 
